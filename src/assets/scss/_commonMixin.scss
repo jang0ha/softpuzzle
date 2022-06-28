@@ -1,0 +1,13 @@
+@mixin sectionPaddingY($value) {
+    padding: $value 0;
+    @include media-breakpoint-down(md){
+        padding:$value/2.5 0;
+    }
+}
+
+
+@mixin mx-n-20px {
+    @include media-breakpoint-down(md){
+        margin : 0 -20px;
+    }
+}
