@@ -1,0 +1,181 @@
+html,
+body{
+    height: 100%;
+    scrollbar-face-color: transparent;
+	scrollbar-track-color: transparent;
+	scrollbar-arrow-color: $secondary;
+	scrollbar-3dlight-color: none;
+	scrollbar-shadow-color: $secondary;
+	scrollbar-darkshadow-color: none;
+    scrollbar-color: $secondary transparent;
+    scrollbar-width: thin;
+    font-family: 'pretendard';
+}
+body{
+    overflow-y: scroll;-webkit-font-smoothing: antialiased;width: 100%;
+}
+::-webkit-scrollbar{
+	width: 4px;
+	height: 4px;
+	background-color: transparent;
+}
+::-webkit-scrollbar-track{
+	border-radius: 0;
+	background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+	border-radius: 2px;
+	background-color: $secondary;
+}
+::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+}
+
+#wrap{min-height: 100%;display: flex;flex-direction: column;  overflow-x: hidden;}
+
+.container{
+    max-width: none;
+    padding:0 60px!important;
+    @include media-breakpoint-down(md){
+        padding:0 20px!important;
+    }
+}
+
+
+header{
+    margin-top: 2rem;
+    .navbar{
+        padding:1rem 0;
+    }
+    @at-root .navbar-brand{
+        font-weight:800!important;
+        font-size:44px;
+        margin-right: 6rem;
+        padding: 0;
+        .router-link-active{
+            font-weight:800!important;
+        }
+        @include media-breakpoint-down(md){
+            font-size:30px;
+            margin-right: 0;
+        }
+    }
+    .navbar-toggler{
+        padding: 6px;
+        background: $black;
+        position: relative;
+        display: inline-block;
+        width: 40px; 
+        height: 40px;
+        border-radius: 0;
+        transition: 1s;
+        .line{
+            display: inline-block;
+            vertical-align: middle;
+            position: absolute;
+            left: 50%;
+            width: 60%;
+            transition: 0.4s ;
+            height: 2px;
+            background: #fff;
+            transform: translateX(-50%);
+            &:first-child {
+                top:10px;
+                
+            }
+            &:nth-child(2) {
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+            &:last-child {
+                bottom: 10px;
+            }
+        }
+        &[ aria-expanded="true"]{
+            background: transparent;
+            .line{
+                &:first-child {
+                    transform:translate(-50%, 8px) rotateZ(45deg);
+                    width: 100%;
+                }
+                &:nth-child(2) {
+                    width: 0;
+                }
+                &:last-child {
+                    transform: translate(-50%, -8px) rotateZ(-45deg);
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    
+    a:hover{text-decoration: none;}
+    .nav-item{
+        padding: 0 20px; display: flex; align-items: center; 
+    }
+    .router-link-active{
+        font-weight: 700;
+    }
+    @include media-breakpoint-down(md){
+        .collapsing{
+            background: $black;
+            color:$white;
+            display: flex;
+            flex-direction: column;
+            padding: 10rem 0;
+            justify-content: center!important;
+            transition: height 0.3s;
+        }
+        .navbar-collapse{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #fff;
+            z-index: 999;
+            &.show{
+                background: $black;
+                color:$white;
+                display: flex;
+                flex-direction: column;
+                padding: 10rem 0;
+                justify-content: center!important;
+                transition: height 0.3s;
+            }
+        }
+        .navbar-toggler{
+            z-index: 9999;
+        }
+        .nav-item{
+            a{
+                color: $white;
+                display: block;
+                margin: 0.5rem 0;
+                font: {
+                    size: 1.2rem;
+                };
+            }
+        }
+    }
+}
+
+
+#content-block{
+    min-height: calc(100% - 100px);
+    padding:1rem 0 3rem 0;
+}
+
+
+footer{
+    padding:2rem 0;
+    a:hover{text-decoration: none;}
+    .navbar-brand{
+        a{
+            color:$gray-300;
+        }
+    }
+}
+
