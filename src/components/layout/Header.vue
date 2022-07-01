@@ -5,7 +5,8 @@
                 <div class="container">
                     <h1 class="navbar-brand  identity">
                         <router-link to="/">
-                            SoftPuzzle
+                            <!-- SoftPuzzle -->
+                            박근수 퍼즐
                         </router-link>
                     </h1>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

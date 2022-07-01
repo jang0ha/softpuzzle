@@ -483,12 +483,12 @@ $paragraph-margin-bottom:   0 !default;
 
 // scss-docs-start grid-breakpoints
 $grid-breakpoints: (
-  xs: 0,
-  sm: 1400px,
-  md: 1400px,
-  lg: 1400px,
-  xl: 1400px,
-  xxl: 1400px
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
 ) !default;
 // scss-docs-end grid-breakpoints
 
@@ -502,11 +502,11 @@ $grid-breakpoints: (
 
 // scss-docs-start container-max-widths
 $container-max-widths: (
-  sm: 1320px,
-  md: 1320px,
-  lg: 1320px,
-  xl: 1320px,
-  xxl: 1320px
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px
 ) !default;
 // scss-docs-end container-max-widths
 
@@ -639,7 +639,9 @@ $font-sizes: (
 // scss-docs-end font-sizes
 
 // scss-docs-start headings-variables
-$headings-margin-bottom:      $spacer * .5 !default;
+// @@@@ 수정
+// $headings-margin-bottom:      $spacer * .5 !default;
+$headings-margin-bottom:      $spacer * 0 !default;
 $headings-font-family:        null !default;
 $headings-font-style:         null !default;
 $headings-font-weight:        500 !default;

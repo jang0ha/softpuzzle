@@ -1,5 +1,6 @@
 <template>
     <main class="main" role="main">
+        <!-- 메인 비쥬얼 섹션 시작-->
         <section class="main-visual">
             <div id="mainVisualSlide" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-pause="false" data-bs-interval="3500">
                 <div class="carousel-inner">
@@ -25,22 +26,48 @@
 
             <p class="border-top pt-2 border-white w-100 h5">IT SERVICE&ensp;/&ensp;AI&ensp;/&ensp;BIG DATA&ensp;/&ensp;MOBILE&ensp;/&ensp;SECURITY&ensp;/&ensp;GOOGLE CLOUD</p>
         </section>
-        <section class="main-about content-container">
-            <div class="d-flex flex-column justify-content-center align-items-center">
-                <h2 class="main-title mb-3 fw-bolder">SoftPuzzle</h2>
-                <div class="text-center">SI 및 ITO 사업을 진행하면서 고객의 Needs를 명확히 파악하여 관련 Solution을 제공하는<br>Web / Mobile & Solution 사업을 전개하고 있습니다.</div>
-            </div>
+        <!-- 메인 비쥬얼 섹션 끝 -->
 
-            <div class="row gap-3 mt-5 mt-lg-10 justify-content-lg-center">
-                <div class="col-lg-3 px-lg-10" :key="index" v-for="(about, index) in aboutList">
-                    <div class="w-100 pt-5 pe-5 ps-2 text-left border-end border-top border-diagonal">
-                        <b class="mb-lg-3 d-block">{{about.aboutTitle}}</b>
-                        <div class="desc">{{about.aboutDesc}}</div>
+        <!-- 메인 어바웃 섹션 시작 -->
+        <section class="main-about content-container">
+            <div class="row gap-0 align-items-end justify-content-around">
+                <div class="col-lg-5 offset-lg-1">
+                    <div class="ms-lg-6 ms-0 ps-lg-5">
+                        <h2 class="fw-bold">박근수 퍼즐의 <br class="d-lg-block d-none">전문가들은<br>각기 다른 재능으로&ensp;<br class="d-lg-block d-none">IT 솔루션과,<br>디지털 트렌드를 제공 합니다.</h2>
+                    </div>
+                </div>
+                <div class="col-lg-auto mt-lg-5 mt-5">
+                    <div class="main-about-desc-container">
+                        <p>비지니스 시작부터<br>운영까지 한번에 구축!</p>
+                        <div class="main-title mt-4">끊임 없이 발전하고 성장하는 기술력으로<br>성공을 위한 소중한 IT인프라를 제공해 드리겠습니다</div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="main-about-img-container">
+                        <!-- <div v-if="hover">
+                            <h2>Hello World!</h2>
+                        </div>
+
+                        <div v-on:mouseover="hover = !hover">
+                            <h1>Hover me!</h1>
+                        </div> -->
+
+                        <ul>
+                            <li :key="index" v-for="(about, index) in aboutList" @mouseover="doMouseOver" :index="index" :class="{'hover': index === 1 }">
+                                <p>{{0}}{{index + 1}}</p>
+                                <strong>{{about.aboutTitle}}</strong>
+                                <small>{{about.aboutDesc}}</small>
+                                <div class="hover-text">{{about.aboutHoverText}}</div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="main-business content-container">
+        <!-- 메인 어바웃 섹션 끝 -->
+
+        <!-- 메인 포트폴리오 섹션 시작 -->
+        <section class="main-portfolio content-container">
             <div class="row gap-5">
                 <div class="col-xxl-auto">
                     <h2 class="main-title mb-5 identity">
@@ -68,20 +95,23 @@
                 </div>
             </div>
         </section>
-        <section class="main-descSection content-container">
+        <!-- 메인 포트폴리오 섹션 끝 -->
+
+        <!-- 메인 스킬 섹션 시작 -->
+        <section class="main-skills content-container">
             <div class="row g-5">
                 <div class="col-lg-5 offset-lg-1">
-                    <div class="ml-lg-6 ms-0 ps-5 border-start border-dark">
+                    <div class="ms-lg-6 ms-0 ps-5 border-start border-dark">
                         <h2 class="main-title mb-5">
                             IT 친화적인 구조
                         </h2>
                         <div class="">
                             소프트 퍼즐만의 데이터 연동, 응용, 관리 기술을 통해 다양한,<br>사용자들에게 맞춤형 서비스를 제공할 수 있으며<br> 사용자 중심의 지속가능한 체계화된 솔루션을 제공 받을 수 있습니다.
                         </div>
-                            <router-link to="/about" class="btn btn-dark px-4 mt-5">소프트퍼즐 알아보기<i class="bi bi-arrow-up-right ms-2 fw-bolder"></i></router-link>
+                        <router-link to="/about" class="btn btn-outline-dark px-4 mt-5">소프트퍼즐 알아보기<i class="bi bi-arrow-up-right ms-2 fw-bolder"></i></router-link>
                     </div>
                 </div>
-                <div class="col-lg mt-lg-6 mt-5">
+                <div class="col-lg mt-lg-5 mt-5">
                     <div class="mb-5" :key="index" v-for="(desc, index) in descList">
                         <p class="fw-bold mb-3 identity">{{desc.descTitle}}</p>
                         <div>{{desc.descDesc}}</div>
@@ -89,17 +119,22 @@
                 </div>
             </div>
         </section>
+        <!-- 메인 스킬 섹션 끝 -->
+
+        <!-- 메인 컨택 섹션 시작 -->
         <section class="main-contact">
             <h2 class="main-title identity mb-3 d-none d-lg-block">
                 소프트 퍼즐과 성공적인 e-비즈니스를 함께!
             </h2>
             <div class="contact-img-wrap">
-                <b class="contact-desc text-white text-center">
+                <p class="contact-desc text-white text-center">
                     소프트 퍼즐의 사업분야에 대해서 내용을 문의하시거나, 사업제휴,의견 등을 자유롭게 기재해 주세요.<br>문의하신 내용은 담당자가 정성껏 답변해 드리겠습니다.
-                </b>
+                </p>
                 <router-link to="/contact" class="btn btn-primary px-4 mt-5">문의 하기<i class="bi bi-arrow-up-right ms-2 fw-bolder"></i></router-link>
             </div>
         </section>
+        <!-- 메인 컨택 섹션 끝 -->
+
     </main>
 </template>
 
@@ -113,6 +148,7 @@
         components: {}, //다른 컴포넌트 사용 시 컴포넌트를 import하고, 배열로 저장
         data() { //html과 자바스크립트 코드에서 사용할 데이터 변수 선언
             return {
+                
                 mainVisualList: [{
                         "mainImg": "mainVisual",
                         "mainDesc": "Safer future through innovative technology.",
@@ -127,19 +163,24 @@
                     }
                 ],
                 aboutList: [{
-                        "aboutImg": "aboutImg01",
-                        "aboutTitle": "SI (System Integration)",
-                        "aboutDesc": "기업이 필요로 하는 시스템에 관한 분석, 구축 등 전반적인 모든 공정상의 서비스를 제공",
+                        "aboutTitle": "Strategy",
+                        "aboutDesc": "브랜드 경험 구축",
+                        "aboutHoverText": "Logical Interpretation",
                     },
                     {
-                        "aboutImg": "aboutImg02",
-                        "aboutTitle": "ITO (IT Outsourcing)",
-                        "aboutDesc": "정보화 전략을 수립, 추출된 핵심 성공요소를 근간으로 효율적인 서비스 제공",
+                        "aboutTitle": "Design",
+                        "aboutDesc": "UI / UX 디자인 시스템",
+                        "aboutHoverText": "Building Experince",
                     },
                     {
-                        "aboutImg": "aboutImg03",
-                        "aboutTitle": "컨설팅 (Consulting)",
-                        "aboutDesc": "컨설팅 목적과 니즈에 따라 최적의 맞춤형 컨설팅 서비스를 제공",
+                        "aboutTitle": "Develope",
+                        "aboutDesc": "웹 / 앱시스템 구축 ",
+                        "aboutHoverText": "Accumulated Skills",
+                    },
+                    {
+                        "aboutTitle": "Maintenance",
+                        "aboutDesc": "유지보수 관리 ",
+                        "aboutHoverText": "Best Performance",
                     },
                 ],
                 businessList: [{
@@ -188,7 +229,7 @@
                         "descDesc": "분산추적, 서비스 메시 원격분석, 메트릭스 집계 및 시각화를 위한 올인원 솔루션을 제공.",
                     },
                 ],
-                active: 0 //carousel 액티브 효과
+                active: 0, //carousel 액티브 효과
             };
         },
         setup() {}, // 컴포지션Api
@@ -196,7 +237,7 @@
         mounted() {}, //templete에 정의된 html 코드가 랜더링 된 후 실행 
         unmounted() {}, //unmount가 완료 된 후 실행
         methods: {
-            //carousel 액티브 효과
+            //메인 비쥬얼 carousel 액티브 효과 시작
             setActive(index) {
                 let active = index;
 
@@ -204,7 +245,23 @@
                 else if (index === -1) active = this.mainVisualList.length - 1;
 
                 this.active = active;
-            }
+            },
+            //메인 비쥬얼 carousel 액티브 효과 끝
+
+            doMouseOver: function (e) {
+                var cols = document.querySelectorAll(".main-about-img-container li");
+                let index = e.target.getAttribute('index');
+                for (var i = 0; i < cols.length; i++) {
+                    cols[i].classList.remove("hover");
+                }
+                    cols[index].classList.add("hover");
+
+            },
         }, //컴포넌트 내에서 사용할 메소드 정의
     }
+
+    // const mainAbout = document.getElementsByClassName(".main-about-img-container").children;
+    // mainAbout[0].focus();
+    //  const mainAbout = document.querySelector('.main-about-img-container').querySelector('li');
+    //             console.log(mainAbout);
 </script>

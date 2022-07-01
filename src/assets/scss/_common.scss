@@ -1,16 +1,11 @@
+ul, ol { 
+    list-style: none;
+}
+
+
+
 [class^=icon-]{display: inline-block;background-size: contain;background-repeat: no-repeat;background-position: 0 0;font-style: normal;font-size: 0;line-height: 1;}
 
-
-
-.font-size-12px{font-size: 12px !important;}
-.font-size-14px{font-size: 14px !important;}
-.font-size-16px{font-size: 16px !important;}
-.font-size-18px{font-size: 18px !important;}
-.font-size-20px{font-size: 20px !important;}
-.font-size-30px{font-size: 30px !important;}
-
-.min-width-66px{min-width: 66px;}
-.min-width-70px{min-width: 70px;}
 
 .btn{
     border-radius: 0;
@@ -68,5 +63,18 @@ a:not(.btn){
         height: 1px;
         background: #dee2e6;
         transform: rotate(319deg);
+    }
+}
+
+.main-title{
+    font: {
+        size: 30px;
+        weight:bold;
+    };
+    line-height: 1.4;
+    @include media-breakpoint-down(md){
+        font : {
+            size:20px;
+        }
     }
 }
