@@ -6,6 +6,10 @@ ul, ol {
 
 [class^=icon-]{display: inline-block;background-size: contain;background-repeat: no-repeat;background-position: 0 0;font-style: normal;font-size: 0;line-height: 1;}
 
+img{
+    max-width: 100%;
+    width: 100%;
+}
 
 .btn{
     border-radius: 0;
@@ -50,22 +54,6 @@ a:not(.btn){
     margin: auto;
 }
 
-
-.border-diagonal{
-    position: relative;
-    &::before{
-        content: "";
-        position: absolute;
-        right: 0;
-        display: block;
-        top: 42px;
-        width: 100px;
-        height: 1px;
-        background: #dee2e6;
-        transform: rotate(319deg);
-    }
-}
-
 .main-title{
     font: {
         size: 30px;
@@ -75,6 +63,167 @@ a:not(.btn){
     @include media-breakpoint-down(md){
         font : {
             size:20px;
+        }
+    }
+}
+
+// 서브페이지 비쥬얼
+.visual-wrap{
+    width: 100%;
+}
+
+// 페이지 타이틀
+.page-title{
+    font : { 
+        size: 5.25rem;
+        weight:900;
+    }
+}
+// 서브 페이지 타이틀
+.sub-page-title{
+    font : {
+        size:2rem;
+        weight:700;
+    }
+}
+
+.title-xl{
+    font : { 
+        size: 38px;
+        weight:300;
+    }
+}
+
+
+.main-about-img-container{
+    ul{
+        max-width: 950px;
+        margin:270px auto 100px auto;
+        display: flex;
+
+        li{
+            flex: 0 0 258px;
+            width: 100%;
+            position: relative;
+            width: 258px;
+            height: 258px;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            padding-left: 2.75rem;
+            p{
+                font: {
+                    size:10px;
+                }
+                margin-bottom: 14px;
+                line-height: 1;
+            }
+            strong{
+                font: { 
+                    size: 24px;
+                }
+                line-height: 1;
+                display: block;
+                margin-bottom: 12px;
+            }
+            .hover-text{
+                font: { 
+                    size: 40px;
+                    weight:900;
+                }
+                line-height: 0.9;
+                position: absolute;
+                top: -7%;
+                left: 50%;
+                transition: all 0.4s;
+                opacity: 0;
+            }
+
+            &::before{
+                content: '';
+                background: url('~@/assets/images/icon-main-about-circle.svg')no-repeat center;
+                width: 258px;
+                height: 258px;
+                display: block;
+                position: absolute;
+                left:0;
+                transition: all 0.4s;
+            }
+            &.hover{
+                .hover-text{
+                    opacity: 1;
+                }
+                &::before{
+                    transform: rotate(-80deg);
+                }
+                &::after{
+                    content: "";
+                    background: url('~@/assets/images/icon-main-about-circle-ellipse.svg') no-repeat center;
+                    width: 350px;
+                    height: 350px;
+                    display: block;
+                    position: absolute;
+                    left: 50%;
+                    transition: all 0.4s;
+                    transform: translateX(-50%);
+                    z-index: -1;
+                }
+            }
+            & + li{
+                margin-left:-1.5rem;
+            }
+        }
+    }
+    .about-process-wrap &{
+        ul{
+            max-width: 950px;
+            margin:0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            li{
+                flex: 0 0 336px;
+                width: 336px;
+                height: 336px;
+                padding-left: 5rem;
+                position: static;
+                background-color: rgba(255, 255, 255, 0.449);
+                border-radius: 50%;
+                margin: -30px;
+                img{
+                    width: 46px;
+                    height: 46px;
+                    margin-bottom: 1.25rem;
+                }
+                p{
+                    font: {
+                        size:10px;
+                    }
+                    margin-bottom: 14px;
+                    line-height: 1;
+                }
+                >div{
+                    display: flex;
+                    flex-direction: column;
+                    min-height: 68px;
+                }
+                strong{
+                    font: { 
+                        size: 24px;
+                    }
+                    line-height: 1;
+                    display: block;
+                    margin-bottom: 12px;
+                }
+                &::before{
+                    display: none;
+                }
+                &:hover{
+                    background: $white;
+                }
+                & + li{
+                    // margin-left:0;
+                }
+            }
         }
     }
 }

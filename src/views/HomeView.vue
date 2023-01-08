@@ -30,28 +30,20 @@
 
         <!-- 메인 어바웃 섹션 시작 -->
         <section class="main-about content-container">
-            <div class="row gap-0 align-items-end justify-content-around">
-                <div class="col-lg-5 offset-lg-1">
-                    <div class="ms-lg-6 ms-0 ps-lg-5">
+            <div class="row g-0 align-items-end justify-content-around">
+                <div class="col-lg-8 col-xl-5 offset-lg-1">
+                    <div class="ms-lg-2 ms-xl-6 ms-0 ">
                         <h2 class="fw-bold">박근수 퍼즐의 <br class="d-lg-block d-none">전문가들은<br>각기 다른 재능으로&ensp;<br class="d-lg-block d-none">IT 솔루션과,<br>디지털 트렌드를 제공 합니다.</h2>
                     </div>
                 </div>
-                <div class="col-lg-auto mt-lg-5 mt-5">
+                <div class="col-lg-auto mt-lg-5 mt-5  pt-md-5">
                     <div class="main-about-desc-container">
-                        <p>비지니스 시작부터<br>운영까지 한번에 구축!</p>
+                        <p class="mt-lg-5">비지니스 시작부터<br>운영까지 한번에 구축!</p>
                         <div class="main-title mt-4">끊임 없이 발전하고 성장하는 기술력으로<br>성공을 위한 소중한 IT인프라를 제공해 드리겠습니다</div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="main-about-img-container">
-                        <!-- <div v-if="hover">
-                            <h2>Hello World!</h2>
-                        </div>
-
-                        <div v-on:mouseover="hover = !hover">
-                            <h1>Hover me!</h1>
-                        </div> -->
-
                         <ul>
                             <li :key="index" v-for="(about, index) in aboutList" @mouseover="doMouseOver" :index="index" :class="{'hover': index === 1 }">
                                 <p>{{0}}{{index + 1}}</p>
@@ -78,15 +70,15 @@
                 </div>
                 <div class="col-xxl mt-4 mt-xxl-0">
                     <div class="business-img-wrap row g-0">
-                        <div class="col-xl-3" :key="index" v-for="(business, index) in businessList">
+                        <div class="col-md-6 col-xl-3" :key="index" v-for="(business, index) in portfolioList">
                             <div class="business-img-container">
                                 <img :src="require(`@/assets/images/${business.businessImg}.png`)" alt="메인 비쥬얼 이미지" />
                                 <div class="title">{{business.businessTitle}}</div>
                                 <div class="over-container">
                                     <div class="over-content">
-                                        <div class="title d-none d-xl-block">{{business.businessTitle}}</div>
+                                        <div class="title d-none d-md-block">{{business.businessTitle}}</div>
                                         <div class="desc">{{business.businessDesc}}</div>
-                                        <div class="desc m-t-20  d-none d-xl-block">{{business.businessDesc2}}</div>
+                                        <div class="desc m-t-20  d-none d-md-block">{{business.businessDesc2}}</div>
                                     </div>
                                 </div>
                             </div>
@@ -112,7 +104,7 @@
                     </div>
                 </div>
                 <div class="col-lg mt-lg-5 mt-5">
-                    <div class="mb-5" :key="index" v-for="(desc, index) in descList">
+                    <div class="mb-5" :key="index" v-for="(desc, index) in skillList">
                         <p class="fw-bold mb-3 identity">{{desc.descTitle}}</p>
                         <div>{{desc.descDesc}}</div>
                     </div>
@@ -136,132 +128,129 @@
         <!-- 메인 컨택 섹션 끝 -->
 
     </main>
+
 </template>
 
 <style lang="scss">
-    @import '../assets/scss/main.scss';
 </style>
 
 <script>
-    export default {
-        name: '', //컴포넌트 이름 
-        components: {}, //다른 컴포넌트 사용 시 컴포넌트를 import하고, 배열로 저장
-        data() { //html과 자바스크립트 코드에서 사용할 데이터 변수 선언
-            return {
-                
-                mainVisualList: [{
-                        "mainImg": "mainVisual",
-                        "mainDesc": "Safer future through innovative technology.",
-                    },
-                    {
-                        "mainImg": "mainVisual02",
-                        "mainDesc": "Is Your Best business partner.",
-                    },
-                    {
-                        "mainImg": "mainVisual03",
-                        "mainDesc": "We'll make you What you need whatever for technology.",
-                    }
-                ],
-                aboutList: [{
-                        "aboutTitle": "Strategy",
-                        "aboutDesc": "브랜드 경험 구축",
-                        "aboutHoverText": "Logical Interpretation",
-                    },
-                    {
-                        "aboutTitle": "Design",
-                        "aboutDesc": "UI / UX 디자인 시스템",
-                        "aboutHoverText": "Building Experince",
-                    },
-                    {
-                        "aboutTitle": "Develope",
-                        "aboutDesc": "웹 / 앱시스템 구축 ",
-                        "aboutHoverText": "Accumulated Skills",
-                    },
-                    {
-                        "aboutTitle": "Maintenance",
-                        "aboutDesc": "유지보수 관리 ",
-                        "aboutHoverText": "Best Performance",
-                    },
-                ],
-                businessList: [{
-                        "businessImg": "business01",
-                        "businessTitle": "IT SERVICE",
-                        "businessDesc": " 기업의 정보시스템과 관련된 Software개발,인력,하드웨어 등의 전체(Total outsourcing) 혹은 일부(selective outsourcing)를 기획에서 유지보수까지 장기간 위탁 받아 최적의 시스템을 유지/발전시키는 서비스를 제공합니다.",
-                        "businessDesc2": "     검증된 운영 노하우로 기존의 비즈니스 시스템에 모바일 기술을 결합하여 웹 환경과 동일한 서비스를 제공하며, android, IOS 등 다양한 운영체제에 적용할 수 있는 솔루션을 구현해드립니다.",
-                        "businessRouter": "/about"
-                    },
-                    {
-                        "businessImg": "business02",
-                        "businessTitle": "AI / BIG DATA",
-                        "businessDesc": "팩토리, 물류, 리테일 매장에서 수집되는 방대한 양의 정보를 Data Lake로 빠르게 분석하여 최적의 Insight를 도출합니다.",
-                        "businessDesc2": "고객 접점에서 발생하는 영상, 이미지, 음성 등 빅데이터를 실시간 분석, 처리하여 향상된 정보보안과 사용자 경험을 제공합니다.",
-                        "businessRouter": "/about"
-                    },
-                    {
-                        "businessImg": "business03",
-                        "businessTitle": "SECURITY",
-                        "businessDesc": "해킹 시도에 대한 철저한 모니터링부터 분석, 대응에 이르는 체계적인 관제서비스를 제공합니다.",
-                        "businessDesc2": "위험요소를 분석하고 알맞는 정보정책을 제시하며 정보 자산을 안전하게 보호하는 차별화된 보안 서비스를 제공합니다.",
-                        "businessRouter": "/about"
-                    },
-                    {
-                        "businessImg": "business04",
-                        "businessTitle": "GOOGLE CLOUD",
-                        "businessDesc": "배포 시간을 단축하고 안정성을 높이며 애플리케이션을 프라이빗 클라우드의 VM 인스턴스로 마이그레이션하여 최적화된 내부 서비스 제공 방식을 재창조합니다.",
-                        "businessDesc2": "고성능 가상 머신을 사용하여 빠르고 유연하게, 디지털 혁신 속도를 높입니다.",
-                        "businessRouter": "/about"
-                    },
-                ],
-                descList: [{
-                        "descTitle": "Value creation",
-                        "descDesc": "역동적으로 변화하는 비즈니스 및 시장의 요구에 맞게 비즈니스 프로세스, 문화, 고객 환경을 조성.",
-                    },
-                    {
-                        "descTitle": "Effective delivery",
-                        "descDesc": "경영전략을 바탕으로 정보화 전략을 수립, 추출된 핵심 성공요소를 근간으로 효율적인 서비스 제공.",
-                    },
-                    {
-                        "descTitle": "Build effective relationships",
-                        "descDesc": "애플리케이션 현대화와 새로운 비즈니스 모델 수립부터 고객을 위한 새로운 제품 및 서비스 빌드.",
-                    },
-                    {
-                        "descTitle": "Application Performance Management",
-                        "descDesc": "분산추적, 서비스 메시 원격분석, 메트릭스 집계 및 시각화를 위한 올인원 솔루션을 제공.",
-                    },
-                ],
-                active: 0, //carousel 액티브 효과
-            };
-        },
-        setup() {}, // 컴포지션Api
-        created() {}, //컴포넌트가 생성되면 실행
-        mounted() {}, //templete에 정의된 html 코드가 랜더링 된 후 실행 
-        unmounted() {}, //unmount가 완료 된 후 실행
-        methods: {
-            //메인 비쥬얼 carousel 액티브 효과 시작
-            setActive(index) {
-                let active = index;
+export default {
+  name: '', // 컴포넌트 이름
+  components: {}, // 다른 컴포넌트 사용 시 컴포넌트를 import하고, 배열로 저장
+  data () { // html과 자바스크립트 코드에서 사용할 데이터 변수 선언
+    return {
 
-                if (index === this.mainVisualList.length) active = 0;
-                else if (index === -1) active = this.mainVisualList.length - 1;
-
-                this.active = active;
-            },
-            //메인 비쥬얼 carousel 액티브 효과 끝
-
-            doMouseOver: function (e) {
-                var cols = document.querySelectorAll(".main-about-img-container li");
-                let index = e.target.getAttribute('index');
-                for (var i = 0; i < cols.length; i++) {
-                    cols[i].classList.remove("hover");
-                }
-                    cols[index].classList.add("hover");
-
-            },
-        }, //컴포넌트 내에서 사용할 메소드 정의
+      mainVisualList: [{
+        mainImg: 'mainVisual',
+        mainDesc: 'Safer future through innovative technology.'
+      },
+      {
+        mainImg: 'mainVisual02',
+        mainDesc: 'Is Your Best business partner.'
+      },
+      {
+        mainImg: 'mainVisual03',
+        mainDesc: "We'll make you What you need whatever for technology."
+      }
+      ],
+      aboutList: [{
+        aboutTitle: 'Strategy',
+        aboutDesc: '브랜드 경험 구축',
+        aboutHoverText: 'Logical Interpretation'
+      },
+      {
+        aboutTitle: 'Design',
+        aboutDesc: 'UI / UX 디자인 시스템',
+        aboutHoverText: 'Building Experince'
+      },
+      {
+        aboutTitle: 'Develope',
+        aboutDesc: '웹 / 앱시스템 구축 ',
+        aboutHoverText: 'Accumulated Skills'
+      },
+      {
+        aboutTitle: 'Maintenance',
+        aboutDesc: '유지보수 관리 ',
+        aboutHoverText: 'Best Performance'
+      }
+      ],
+      portfolioList: [{
+        businessImg: 'business01',
+        businessTitle: 'IT SERVICE',
+        businessDesc: ' 기업의 정보시스템과 관련된 Software개발,인력,하드웨어 등의 전체(Total outsourcing) 혹은 일부(selective outsourcing)를 기획에서 유지보수까지 장기간 위탁 받아 최적의 시스템을 유지/발전시키는 서비스를 제공합니다.',
+        businessDesc2: '     검증된 운영 노하우로 기존의 비즈니스 시스템에 모바일 기술을 결합하여 웹 환경과 동일한 서비스를 제공하며, android, IOS 등 다양한 운영체제에 적용할 수 있는 솔루션을 구현해드립니다.',
+        businessRouter: '/about'
+      },
+      {
+        businessImg: 'business02',
+        businessTitle: 'AI / BIG DATA',
+        businessDesc: '팩토리, 물류, 리테일 매장에서 수집되는 방대한 양의 정보를 Data Lake로 빠르게 분석하여 최적의 Insight를 도출합니다.',
+        businessDesc2: '고객 접점에서 발생하는 영상, 이미지, 음성 등 빅데이터를 실시간 분석, 처리하여 향상된 정보보안과 사용자 경험을 제공합니다.',
+        businessRouter: '/about'
+      },
+      {
+        businessImg: 'business03',
+        businessTitle: 'SECURITY',
+        businessDesc: '해킹 시도에 대한 철저한 모니터링부터 분석, 대응에 이르는 체계적인 관제서비스를 제공합니다.',
+        businessDesc2: '위험요소를 분석하고 알맞는 정보정책을 제시하며 정보 자산을 안전하게 보호하는 차별화된 보안 서비스를 제공합니다.',
+        businessRouter: '/about'
+      },
+      {
+        businessImg: 'business04',
+        businessTitle: 'GOOGLE CLOUD',
+        businessDesc: '배포 시간을 단축하고 안정성을 높이며 애플리케이션을 프라이빗 클라우드의 VM 인스턴스로 마이그레이션하여 최적화된 내부 서비스 제공 방식을 재창조합니다.',
+        businessDesc2: '고성능 가상 머신을 사용하여 빠르고 유연하게, 디지털 혁신 속도를 높입니다.',
+        businessRouter: '/about'
+      }
+      ],
+      skillList: [{
+        descTitle: 'Value creation',
+        descDesc: '역동적으로 변화하는 비즈니스 및 시장의 요구에 맞게 비즈니스 프로세스, 문화, 고객 환경을 조성.'
+      },
+      {
+        descTitle: 'Effective delivery',
+        descDesc: '경영전략을 바탕으로 정보화 전략을 수립, 추출된 핵심 성공요소를 근간으로 효율적인 서비스 제공.'
+      },
+      {
+        descTitle: 'Build effective relationships',
+        descDesc: '애플리케이션 현대화와 새로운 비즈니스 모델 수립부터 고객을 위한 새로운 제품 및 서비스 빌드.'
+      },
+      {
+        descTitle: 'Application Performance Management',
+        descDesc: '분산추적, 서비스 메시 원격분석, 메트릭스 집계 및 시각화를 위한 올인원 솔루션을 제공.'
+      }
+      ],
+      active: 0 // carousel 액티브 효과
     }
+  },
+  setup () {}, // 컴포지션Api
+  created () {}, // 컴포넌트가 생성되면 실행
+  mounted () {}, // templete에 정의된 html 코드가 랜더링 된 후 실행
+  unmounted () {}, // unmount가 완료 된 후 실행
+  methods: {
+    // 메인 비쥬얼 carousel 액티브 효과 시작
+    setActive (index) {
+      let active = index
 
-    // const mainAbout = document.getElementsByClassName(".main-about-img-container").children;
-    // mainAbout[0].focus();
-    //  const mainAbout = document.querySelector('.main-about-img-container').querySelector('li');
-    //             console.log(mainAbout);
+      if (index === this.mainVisualList.length) active = 0
+      else if (index === -1) active = this.mainVisualList.length - 1
+
+      this.active = active
+    },
+    // 메인 비쥬얼 carousel 액티브 효과 끝
+
+    // 메인 어바웃 시작
+    doMouseOver: function (e) {
+      const cols = document.querySelectorAll('.main-about-img-container li')
+      const index = e.target.getAttribute('index')
+      for (let i = 0; i < cols.length; i++) {
+        cols[i].classList.remove('hover')
+      }
+      cols[index].classList.add('hover')
+    }
+    // 메인 어바웃 끝
+
+  } // 컴포넌트 내에서 사용할 메소드 정의
+}
 </script>

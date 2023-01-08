@@ -162,24 +162,27 @@ address {
 
 
 // Lists
-
+// @@@@ 수정
 ol,
 ul {
-  padding-left: 2rem;
+//   padding-left: 2rem;
+padding:0; margin: 0;
 }
 
 ol,
 ul,
 dl {
-  margin-top: 0;
-  margin-bottom: 1rem;
+//   margin-top: 0;
+//   margin-bottom: 1rem;
+padding:0; margin: 0;
 }
 
 ol ol,
 ul ul,
 ol ul,
 ul ol {
-  margin-bottom: 0;
+//   margin-bottom: 0;
+  padding:0; margin: 0;
 }
 
 dt {
@@ -189,8 +192,9 @@ dt {
 // 1. Undo browser default
 
 dd {
-  margin-bottom: .5rem;
-  margin-left: 0; // 1
+//   margin-bottom: .5rem;
+//   margin-left: 0; // 1
+padding:0; margin: 0;
 }
 
 
@@ -205,11 +209,17 @@ blockquote {
 //
 // Add the correct font weight in Chrome, Edge, and Safari
 
-b,
-strong {
+// @@@@ 수정
+// b,
+// strong {
+//   font-weight: $font-weight-bold;
+// }
+b{
   font-weight: $font-weight-bold;
 }
-
+strong{
+    font-weight: 900;
+  }
 
 // Small
 //

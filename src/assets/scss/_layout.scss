@@ -14,24 +14,29 @@ body{
 body{
     overflow-y: scroll;-webkit-font-smoothing: antialiased;width: 100%;
     background-color: $white;
-    line-height: 1.4;
+    line-height: 1.6;
+    margin-right: 6px;
 }
 ::-webkit-scrollbar{
-	width: 4px;
-	height: 4px;
+	width: 6px;
+	height: 6px;
 	background-color: transparent;
+    margin-right: 6px;
 }
 ::-webkit-scrollbar-track{
 	border-radius: 0;
 	background-color: transparent;
+    margin-right: 6px;
 }
 ::-webkit-scrollbar-thumb{
-	border-radius: 2px;
+	border-radius: 4px;
 	background-color: $secondary;
+    margin-right: 6px;
 }
 ::-webkit-scrollbar-button {
     width: 0;
     height: 0;
+    margin-right: 6px;
 }
 
 #wrap{min-height: 100%;display: flex;flex-direction: column;  overflow-x: hidden;}
@@ -40,125 +45,142 @@ body{
     max-width: none;
     padding:0 60px!important;
     @include media-breakpoint-down(md){
-        padding:0 20px!important;
+        padding:0 24px!important;
     }
 }
 
 
-header{
-    margin-top: 2rem;
-    .navbar{
-        padding:1rem 0;
-    }
-    @at-root .navbar-brand{
-        font-weight:800!important;
-        font-size:44px;
-        margin-right: 6rem;
-        padding: 0;
-        .router-link-active{
+#header-block{
+    header{
+        .navbar{
+            padding:1rem 0;
+            margin: 1.75rem 0 1rem 0;
+        }
+        @at-root .navbar-brand{
             font-weight:800!important;
-        }
-        @include media-breakpoint-down(md){
-            font-size:30px;
-            margin-right: 0;
-        }
-    }
-    .navbar-toggler{
-        padding: 6px;
-        background: $black;
-        position: relative;
-        display: inline-block;
-        width: 40px; 
-        height: 40px;
-        border-radius: 0;
-        transition: 1s;
-        .line{
-            display: inline-block;
-            vertical-align: middle;
-            position: absolute;
-            left: 50%;
-            width: 60%;
-            transition: 0.4s ;
-            height: 2px;
-            background: #fff;
-            transform: translateX(-50%);
-            &:first-child {
-                top:10px;
-                
-            }
-            &:nth-child(2) {
-                top: 50%;
-                transform: translate(-50%, -50%);
-            }
-            &:last-child {
-                bottom: 10px;
-            }
-        }
-        &[ aria-expanded="true"]{
-            background: transparent;
-            .line{
-                &:first-child {
-                    transform:translate(-50%, 8px) rotateZ(45deg);
-                    width: 100%;
-                }
-                &:nth-child(2) {
-                    width: 0;
-                }
-                &:last-child {
-                    transform: translate(-50%, -8px) rotateZ(-45deg);
-                    width: 100%;
-                }
-            }
-        }
-    }
-
-    
-    a:hover{text-decoration: none;}
-    .nav-item{
-        padding: 0 20px; display: flex; align-items: center; 
-    }
-    .router-link-active{
-        font-weight: 700;
-    }
-    @include media-breakpoint-down(md){
-        .collapsing{
-            background: $black;
-            color:$white;
-            display: flex;
-            flex-direction: column;
-            padding: 10rem 0;
-            justify-content: center!important;
-            transition: height 0.3s;
-        }
-        .navbar-collapse{
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: #fff;
-            z-index: 999;
-            &.show{
-                background: $black;
-                color:$white;
-                display: flex;
-                flex-direction: column;
-                padding: 10rem 0;
-                justify-content: center!important;
-                transition: height 0.3s;
+            font-size:44px;
+            margin-right: 6rem;
+            padding: 0;
+            .router-link-active{
+                font-weight:800!important;
             }
         }
         .navbar-toggler{
-            z-index: 9999;
+            padding: 6px;
+            position: relative;
+            width: 40px; 
+            height: 40px;
+            border-radius: 0;
+            z-index: 99;
+            .line{
+                display: inline-block;
+                vertical-align: middle;
+                position: absolute;
+                left: 50%;
+                width: 60%;
+                transition: 0.4s ;
+                height: 2px;
+                background: $black;
+                transform: translateX(-50%);
+                &:first-child {
+                    top:10px;
+                }
+                &:nth-child(2) {
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+                &:last-child {
+                    bottom: 10px;
+                }
+            }
+            &:focus{
+                box-shadow: none;
+                outline: 0;
+            }
+            &[ aria-expanded="true"]{
+                background: transparent;
+                width: 32px; 
+                height: 32px;
+                .line{
+                    background: $white;
+                    &:first-child {
+                        transform:translate(-50%, 0) rotateZ(45deg);
+                        width: 100%;
+                    }
+                    &:nth-child(2) {
+                        width: 0;
+                    }
+                    &:last-child {
+                        transform: translate(-50%, -8px) rotateZ(-45deg);
+                        width: 100%;
+                    }
+                }
+            }
         }
+    
+        a:hover{text-decoration: none;}
         .nav-item{
-            a{
-                color: $white;
-                display: block;
-                margin: 0.5rem 0;
-                font: {
-                    size: 1.2rem;
-                };
+            padding: 0 20px; display: flex; align-items: center; 
+        }
+        .router-link-active{
+            font-weight: 700;
+        }
+    }
+    @include media-breakpoint-down(md){
+        position: fixed;
+        width: 100%;
+        left: 0;
+        top: 0;
+        background: $white;
+        box-shadow: $box-shadow;
+        z-index: 9;
+        header{
+            .navbar{
+                padding:1rem 0;
+                margin:0;
+            }
+            .navbar-brand{
+                font-size:1.5rem;
+                margin-right: 0;
+                margin-top: 0.7rem;
+            }
+            .navbar-nav{
+                width: 100%;
+            }
+            .collapse:not(.show){
+                display: flex;
+            }
+            
+            .navbar-collapse{
+                
+                display: flex;
+                height: 0;
+                transition: all 0.2s;
+                position: absolute;
+                width: 100%;
+                left: 0;
+                top: -100vh;
+                z-index: 10;
+                background: $black;
+                padding: 4rem;
+                justify-content: center;
+                flex-direction: column;
+                &.collapsing, &.show{
+                    height: 100vh!important;
+                    top: 0;
+                }
+            }
+            .nav-item{
+                justify-content: center;
+                padding:0;
+                a{
+                    color: $white;
+                    display: block;
+                    margin: 0.5rem 0;
+                    font: {
+                        size: 1.2rem;
+                    };
+                }
             }
         }
     }
@@ -167,7 +189,11 @@ header{
 
 #content-block{
     min-height: calc(100% - 100px);
-    padding:1rem 0 3rem 0;
+    margin-bottom: 60px;
+    @include media-breakpoint-down(md){
+        padding-top: 72px;
+        margin-bottom: 24px;
+    }
 }
 
 
@@ -175,9 +201,12 @@ footer{
     padding:2rem 0;
     a:hover{text-decoration: none;}
     .navbar-brand{
-        a{
-            color:$gray-300;
+        color:$gray-300;
+        font : {
+            size : 1.5rem;
         }
+        a{
+        } 
     }
 }
 

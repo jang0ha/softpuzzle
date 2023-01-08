@@ -6,8 +6,14 @@
 }
 
 
-@mixin mx-n-20px {
+@mixin mx-n-24px {
     @include media-breakpoint-down(md){
-        margin : 0 -20px;
+        margin : 0 -24px;
     }
+}
+
+
+@mixin contentInner{
+    max-width: 70vw;
+    margin: auto;
 }

@@ -2,31 +2,30 @@
     <div id='footer-block'>
         <footer class="border-top">
             <div class='container'>
-                <div class="row row-0">
-                    <div class="col-auto">
-                        <h1 class="navbar-brand">
-                            <router-link to="/">Soft Puzzle</router-link>
-                        </h1>
-                    </div>
-                    <div class="col">
-                        <div>
-                            <ul>
-                                <li><a href="">개인정보 처리방침</a></li>
-                                <li><a href="">이용약관</a></li>
-                            </ul>
+                <div class="row align-items-stretch">
+                    <div class="col-md-3 h-100">
+                        <div class="navbar-brand">
+                            SoftPuzzle
                         </div>
+                    </div>
+                    <div class="col-md-auto d-none d-md-block h-100">
+                        <div class="vr h-100"></div>
+                    </div>
+                    <div class="col-md h-100">
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="h6 mb-3">(주)소프트퍼즐</p>
+                            </div>
+                            <div class="col-md h-100">
+                                <div class="d-flex gap-md-3 gap-1 flex-column flex-sm-row">
+                                    <address class="mb-0">서울 구로구 디지털로 272 한신IT타워 1007호</address>
+                                    <span>TEL : 02-6091-0060</span>
+                                </div>
+                                <small>©copyright 2022 SOFTPUZZLE All Rights Reserved</small>
+                            </div>
+                        </div>
+                    </div>
 
-                        <div>
-                            <ul>
-                                <li>
-                                    <router-link to="/about">소개</router-link>
-                                </li>
-                                <li>
-                                    <router-link to="/about">문의하기</router-link>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </div>
         </footer>

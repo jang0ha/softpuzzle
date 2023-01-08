@@ -1,0 +1,20 @@
+.modal-content{
+    border:0;
+
+}
+.modal-footer{
+    justify-content: center;
+    gap: 0;
+    button{
+        background: transparent;
+        border: 0;
+        flex: 0 0 50%;
+        margin:0;
+        &:focus, &:active{
+            box-shadow: none;
+        }
+    }
+}
+.modal-body{
+        padding:3rem;
+}

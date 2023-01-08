@@ -14,7 +14,7 @@
                         <span class="line"></span>
                         <span class="line"></span>
                     </button>
-                    <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                    <div class="collapse navbar-collapse justify-content-lg-between" id="navbarSupportedContent">
                         <ul class="navbar-nav mb-2 mb-lg-0">
                             <li class="nav-item">
                                 <router-link to="/about">소개</router-link>
@@ -32,7 +32,7 @@
                                 <router-link to="/">소개</router-link>
                             </li>
                         </ul>
-                        <ul>
+                        <ul class="mt-5 mt-lg-0">
                             <li class="nav-item">
                                 <router-link to="/contact" class="btn btn-dark px-4">문의하기</router-link>
                             </li> 
