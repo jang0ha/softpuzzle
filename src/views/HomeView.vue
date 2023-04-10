@@ -33,7 +33,7 @@
             <div class="row g-0 align-items-end justify-content-around">
                 <div class="col-lg-8 col-xl-5 offset-lg-1">
                     <div class="ms-lg-2 ms-xl-6 ms-0 ">
-                        <h2 class="fw-bold">박근수 퍼즐의 <br class="d-lg-block d-none">전문가들은<br>각기 다른 재능으로&ensp;<br class="d-lg-block d-none">IT 솔루션과,<br>디지털 트렌드를 제공 합니다.</h2>
+                        <h2 class="fw-bold">영하 퍼즐의 <br class="d-lg-block d-none">전문가들은<br>각기 다른 재능으로&ensp;<br class="d-lg-block d-none">IT 솔루션과,<br>디지털 트렌드를 제공 합니다.</h2>
                     </div>
                 </div>
                 <div class="col-lg-auto mt-lg-5 mt-5  pt-md-5">

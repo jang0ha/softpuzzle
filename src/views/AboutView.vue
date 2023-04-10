@@ -11,7 +11,7 @@
                     ABOUT
                 </page-title>
                 <sub-title>
-                    근수네 퍼즐은 이런회사지요 ㅎㅎ어바웃 페이지에요
+                    영하네 퍼즐은 이런회사지요 ㅎㅎ어바웃 페이지에요
                 </sub-title>
             </div>
         </section>
